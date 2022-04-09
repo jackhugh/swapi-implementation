@@ -7,7 +7,7 @@ export default function PeopleBrowser() {
 	const page = usePage();
 	const { data } = usePeople(page);
 
-	// We should never enter this state as data is prefetched
+	// We should never enter this state as data is prefetched.
 	if (!data) return null;
 
 	return (

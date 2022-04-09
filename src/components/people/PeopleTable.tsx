@@ -8,14 +8,14 @@ export default function PeopleTable({ people }: PeopleListProps) {
 	const [sortedPeople, currentSortType, cycleSort] = useMassSort(people);
 
 	return (
-		<table className='w-full table-fixed text-center'>
+		<table className='w-full table-fixed text-left'>
 			<thead>
 				<tr>
 					<th>Name</th>
 					<th>Height</th>
 					<th>Hair Colour</th>
 					<th>
-						<button className='w-full flex gap-1 justify-center' onClick={cycleSort}>
+						<button className='w-full flex gap-1' onClick={cycleSort}>
 							<span className='font-bold'>Mass</span>
 							{currentSortType}
 						</button>
