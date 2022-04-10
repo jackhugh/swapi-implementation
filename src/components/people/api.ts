@@ -33,7 +33,7 @@ export interface IPerson {
 
 export interface IPeopleResponse {
 	count: number;
-	next: string;
-	previous: string;
+	next: string | null;
+	previous: string | null;
 	results: IPerson[];
 }

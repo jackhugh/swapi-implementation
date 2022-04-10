@@ -5,7 +5,7 @@ import PeopleTable from './PeopleTable';
 
 export default function PeopleBrowser() {
 	const page = usePage();
-	const { data } = usePeople(page);
+	const { data, isPreviousData } = usePeople(page);
 
 	// We should never enter this state as data is prefetched.
 	if (!data) return null;
@@ -13,7 +13,7 @@ export default function PeopleBrowser() {
 	return (
 		<div className='flex flex-col gap-2'>
 			<PeopleTable people={data.results} />
-			<PeoplePageControls page={page} hasPreviousPage={!!data.previous} hasNextPage={!!data.next} />
+			<PeoplePageControls page={page} hasPreviousPage={page !== 1} hasNextPage={!isPreviousData && !!data.next} />
 		</div>
 	);
 }

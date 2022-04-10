@@ -1,12 +1,12 @@
 import Link from 'next/link';
 
-type PeopleControlsProps = {
+type PeoplePageControlsProps = {
 	page: number;
 	hasPreviousPage: boolean;
 	hasNextPage: boolean;
 };
 
-export default function PeopleControls({ page, hasPreviousPage, hasNextPage }: PeopleControlsProps) {
+export default function PeoplePageControls({ page, hasPreviousPage, hasNextPage }: PeoplePageControlsProps) {
 	return (
 		<div className='flex gap-2 justify-center text-center'>
 			<ChangePageButton changeTo={page - 1} text='Previous' disabled={!hasPreviousPage} />
